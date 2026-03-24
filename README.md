@@ -1,3 +1,12 @@
+#we need to change github command
+git config --global user.name "Our City Nirman Pvt Ltd"
+git config --global user.email "company-email@example.com"
+
+git commit --amend --author="Our City Nirman Pvt Ltd <company-email@example.com>"
+git push --force
+
+
+
 # Our City Nirman — Coming Soon Landing Page
 
 A premium, professional **"Coming Soon"** landing page for **Our City Nirman Pvt Ltd** built with:

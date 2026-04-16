@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const QUICK_LINKS = [
   { label: 'Home',          type: 'nav', to: '/' },
   { label: 'Register Now',  type: 'nav', to: '/register' },
+  { label: 'Terms of Use',  type: 'nav', to: '/terms-of-use' },
   { label: 'Our Website',   type: 'ext', href: 'https://www.ourcitynirman.in' },
 ]
 
@@ -95,9 +96,10 @@ const SOCIAL_LINKS = [
 ]
 
 const BOTTOM_LINKS = [
-  { label: 'Website',  href: 'https://www.ourcitynirman.in', ext: true },
-  { label: 'Contact',  href: 'tel:+918553866059' },
-  { label: 'Location', href: 'https://maps.google.com/?q=25.262807,87.395522', ext: true },
+  { label: 'Website',       href: 'https://www.ourcitynirman.in', ext: true },
+  { label: 'Terms of Use',  to:   '/terms-of-use',                nav: true },
+  { label: 'Contact',       href: 'tel:+918553866059' },
+  { label: 'Location',      href: 'https://maps.google.com/?q=25.262807,87.395522', ext: true },
 ]
 
 // ─── CSS ──────────────────────────────────────────────────────
@@ -492,14 +494,22 @@ export default function FooterSection() {
           </div>
 
           <div style={{ display:'flex', alignItems:'center', flexWrap:'wrap', gap:16 }}>
-            {BOTTOM_LINKS.map(({label,href,ext})=>(
-              <a key={label} href={href} target={ext?'_blank':undefined} rel="noopener noreferrer"
-                style={{ color:'#334155', fontSize:11, textDecoration:'none', fontFamily:"'DM Sans',sans-serif",
-                  transition:'color .2s' }}
-                onMouseEnter={e=>e.currentTarget.style.color='#f97316'}
-                onMouseLeave={e=>e.currentTarget.style.color='#334155'}>
-                {label}
-              </a>
+            {BOTTOM_LINKS.map(({label,href,ext,to,nav})=>(
+              nav
+                ? <button key={label} onClick={()=>navigate(to)}
+                    style={{ color:'#334155', fontSize:11, background:'none', border:'none',
+                      cursor:'pointer', fontFamily:"'DM Sans',sans-serif", transition:'color .2s', padding:0 }}
+                    onMouseEnter={e=>e.currentTarget.style.color='#f97316'}
+                    onMouseLeave={e=>e.currentTarget.style.color='#334155'}>
+                    {label}
+                  </button>
+                : <a key={label} href={href} target={ext?'_blank':undefined} rel="noopener noreferrer"
+                    style={{ color:'#334155', fontSize:11, textDecoration:'none', fontFamily:"'DM Sans',sans-serif",
+                      transition:'color .2s' }}
+                    onMouseEnter={e=>e.currentTarget.style.color='#f97316'}
+                    onMouseLeave={e=>e.currentTarget.style.color='#334155'}>
+                    {label}
+                  </a>
             ))}
             <button onClick={()=>navigate('/register')}
               style={{ color:'#334155', fontSize:11, background:'none', border:'none',

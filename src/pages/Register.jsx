@@ -15,10 +15,9 @@ const SIZES   = ['₹1L–5L','₹5L–10L','₹10L–20L','₹20L–35L','₹35
 const SOURCES = ['WhatsApp / Social Media','Friend / Family','Google Search','YouTube','Newspaper','Local Event','Other']
 
 // ─────────────────────────────────────────────────────────────
-//  CSS
+//  CSS — Fonts are loaded globally via index.css — no @import needed here.
 // ─────────────────────────────────────────────────────────────
 const ANIM_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Sora:wght@700;800;900&display=swap');
 *,*::before,*::after{box-sizing:border-box}
 body{background:#070d18;margin:0;font-family:'DM Sans',system-ui,sans-serif}
 

@@ -23,9 +23,8 @@ const stats = [
 ]
 
 // ── Enhanced CSS injected globally ──────────────────────────
+// Fonts are loaded globally via index.css — no @import needed here.
 const GLOBAL_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Sora:wght@700;800;900&display=swap');
-
 :root {
   --orange:     #f97316;
   --orange-dim: rgba(249,115,22,.18);
